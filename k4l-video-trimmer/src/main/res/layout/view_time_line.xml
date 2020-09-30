@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/layout_surface_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/layout"
-        android:background="@android:color/black"
         android:gravity="center"
+        android:background="@android:color/white"
+
         android:orientation="vertical">
 
         <VideoView
@@ -35,7 +37,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/background_video_color">
+        android:background="@android:color/white"
+        >
 
         <SeekBar
             android:id="@+id/handlerTop"
@@ -76,32 +79,54 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/lineTop"
+            android:background="@android:color/white"
+
             android:orientation="horizontal">
 
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="0in"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/btCancel"
+                    android:layout_width="32dp"
+                    android:layout_gravity="end"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+
+                    android:src="@drawable/ic_delete_48dp"
+
+                    android:focusable="true" />
+            </RelativeLayout>
+
+
             <Button
-                android:id="@+id/btCancel"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/black_button_background"
-                android:text="@string/cancel"
-                android:textColor="@android:color/white"/>
+                android:clickable="true"
+                android:text="@string/record_again"
+                android:background="?android:attr/selectableItemBackground"
+                android:textColor="@color/gray"
+                android:textSize="14sp"
+                android:id="@+id/btRecordAgain"
 
-            <View
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:background="@color/line_button"/>
-
-            <Button
-                android:id="@+id/btSave"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/black_button_background"
-                android:text="@string/save"
-                android:textColor="@android:color/holo_red_dark"/>
+                android:focusable="true" />
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="0in"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/btSave"
+                    android:layout_width="32dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_done_black_48dp"
+                    android:focusable="true"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
 
         </LinearLayout>
 
