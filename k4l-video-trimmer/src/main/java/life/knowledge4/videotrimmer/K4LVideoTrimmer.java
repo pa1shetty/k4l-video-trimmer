@@ -148,6 +148,16 @@ public class K4LVideoTrimmer extends FrameLayout {
                         }
                 );
 
+        findViewById(R.id.btRecordAgain)
+                .setOnClickListener(
+                        new OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                onRestartClicked();
+                            }
+                        }
+                );
+
         findViewById(R.id.btSave)
                 .setOnClickListener(
                         new OnClickListener() {
@@ -322,6 +332,14 @@ public class K4LVideoTrimmer extends FrameLayout {
         mVideoView.stopPlayback();
         if (mOnTrimVideoListener != null) {
             mOnTrimVideoListener.cancelAction();
+        }
+    }
+
+
+    private void onRestartClicked() {
+        mVideoView.stopPlayback();
+        if (mOnTrimVideoListener != null) {
+            mOnTrimVideoListener.restartRecording();
         }
     }
 

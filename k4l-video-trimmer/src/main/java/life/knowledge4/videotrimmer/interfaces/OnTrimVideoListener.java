@@ -32,6 +32,6 @@ public interface OnTrimVideoListener {
     void getResult(final Uri uri);
 
     void cancelAction();
-
+    void restartRecording();
     void onError(final String message);
 }
