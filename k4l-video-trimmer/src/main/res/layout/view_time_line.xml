@@ -2,21 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@android:color/white"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
-    <RelativeLayout android:gravity="center"
-        android:layout_width="wrap_content"
+    <RelativeLayout
         android:id="@+id/layout_surface_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true">
+        android:layout_above="@+id/layout"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:orientation="vertical">
+
         <VideoView
-            android:layout_margin="8dp"
             android:id="@+id/video_loader"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-           />
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
 
         <ImageView
             android:id="@+id/icon_video_play"
@@ -27,17 +29,13 @@
             android:background="@drawable/play_button"/>
 
     </RelativeLayout>
-
     <RelativeLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@android:color/white"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+
         >
 
         <SeekBar
@@ -74,6 +72,8 @@
             android:layout_height="wrap_content"
             android:text="Saved as"
             android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:layout_below="@+id/timeLineBar"
             />
         <EditText android:textColor="@android:color/black"
@@ -84,6 +84,8 @@
             android:text="Video Note"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
            />
 
         <LinearLayout
@@ -92,7 +94,8 @@
             android:layout_below="@+id/videoName"
             android:background="@android:color/white"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:orientation="horizontal">
 
             <RelativeLayout
