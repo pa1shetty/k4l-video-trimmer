@@ -38,6 +38,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -80,7 +81,7 @@ public class K4LVideoTrimmer extends FrameLayout {
     private TextView mTextTimeFrame;
     private TextView mTextTime;
     private TimeLineView mTimeLineView;
-
+    private EditText mVideoName;
     private ProgressBarView mVideoProgressIndicator;
     private Uri mSrc;
     private String mFinalPath;
@@ -123,7 +124,7 @@ public class K4LVideoTrimmer extends FrameLayout {
         mTextTimeFrame = ((TextView) findViewById(R.id.textTimeSelection));
         mTextTime = ((TextView) findViewById(R.id.textTime));
         mTimeLineView = ((TimeLineView) findViewById(R.id.timeLineView));
-
+        mVideoName=((EditText)findViewById(R.id.videoName));
         setUpListeners();
         setUpMargins();
     }
@@ -271,7 +272,7 @@ public class K4LVideoTrimmer extends FrameLayout {
     private void onSaveClicked() {
         if (mStartPosition <= 0 && mEndPosition >= mDuration) {
             if (mOnTrimVideoListener != null)
-                mOnTrimVideoListener.getResult(mSrc);
+                mOnTrimVideoListener.getResult(mSrc,mVideoName.getText().toString());
         } else {
             mPlayView.setVisibility(View.VISIBLE);
             mVideoView.pause();
