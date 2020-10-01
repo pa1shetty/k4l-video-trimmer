@@ -23,7 +23,9 @@
  */
 package life.knowledge4.videotrimmer;
 
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.Point;
 import android.media.MediaMetadataRetriever;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -33,6 +35,7 @@ import android.os.Message;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.Display;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -125,6 +128,22 @@ public class K4LVideoTrimmer extends FrameLayout {
         mTextTime = ((TextView) findViewById(R.id.textTime));
         mTimeLineView = ((TimeLineView) findViewById(R.id.timeLineView));
         mVideoName=((EditText)findViewById(R.id.videoName));
+
+        Display display = ((Activity)context).getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int screenWidth = size.x;
+        int screenHeight = size.y;
+
+        RelativeLayout.LayoutParams r1 = new RelativeLayout.LayoutParams(
+                (screenWidth),
+                (screenWidth));
+        r1.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+        r1.addRule(RelativeLayout.CENTER_HORIZONTAL);
+        r1.addRule(RelativeLayout.CENTER_IN_PARENT);
+        r1.setMargins(0, 20, 0, 20);
+        mVideoView.setLayoutParams(r1);
+
         setUpListeners();
         setUpMargins();
     }
