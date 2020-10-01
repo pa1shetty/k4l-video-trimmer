@@ -17,7 +17,7 @@
 
 1. Include the library as local library project.
 
-    ``` compile 'life.knowledge4:k4l-video-trimmer:1.0' ```
+    ```  implementation 'com.github.pa1shetty:k4l-video-trimmer:0.2.0' ```
     
 2. Add K4LVideoTrimmer component into your layout.
 
